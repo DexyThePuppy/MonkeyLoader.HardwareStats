@@ -1,5 +1,5 @@
 # MonkeyLoader.HardwareStats
-=============================
+
 *Woof!* A Resonite mod that provides real-time hardware monitoring information through dynamic variables!
 
 ## Features 🐾
