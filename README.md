@@ -30,11 +30,6 @@
 
 Once installed, the mod will automatically start monitoring your hardware. You can access the hardware information through dynamic variables in your Resonite worlds.
 
-Example usage in a world:
-1. Create a text renderer
-2. Set its text to: `<dynamic.Hardware/CPU/Temperature>°C`
-3. The text will automatically update with your CPU temperature!
-
 ## Available Variables 📊
 
 ### CPU
