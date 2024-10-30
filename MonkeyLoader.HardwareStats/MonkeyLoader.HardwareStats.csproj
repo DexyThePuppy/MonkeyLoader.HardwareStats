@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyTitle>MonkeyLoader.HardwareStats</AssemblyTitle>
+    <RootNamespace>MonkeyLoader.HardwareStats</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageId>MonkeyLoader.HardwareStats</PackageId>
+    <Title>Hardware Stats for Resonite</Title>
+    <Authors>Dexy</Authors>
+    <Version>1.0.0</Version>
+    <Description>A Resonite mod that provides real-time hardware monitoring information through dynamic variables.</Description>
+    <PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>
+    <PackageTags>mod; mods; monkeyloader; resonite; hardware; monitoring</PackageTags>
+    <PackageProjectUrl>https://github.com/DexyThePuppy/MonkeyLoader.HardwareStats</PackageProjectUrl>
+    <TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);AddExtraFilesToPackage</TargetsForTfmSpecificContentInPackage>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <EnablePackageValidation>true</EnablePackageValidation>
+  </PropertyGroup>
+
+  <Target Name="AddExtraFilesToPackage">
+    <ItemGroup>
+      <TfmSpecificPackageFile Include="$(ProjectDir)..\MonkeyLoader.HardwareStats.PrePatcher\bin\$(Configuration)\$(TargetFramework)\MonkeyLoader.HardwareStats.PrePatcher.*" PackagePath="lib/$(TargetFramework)/pre-patchers/" />
+    </ItemGroup>
+  </Target>
+  
+  <ItemGroup>
+    <None Include="..\README.md" Pack="true" PackagePath="" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MonkeyLoader" Version="0.19.0-beta" />
+    <PackageReference Include="OpenHardwareMonitor" Version="0.9.6" />
+    <PackageReference Include="System.Management" Version="7.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MonkeyLoader.HardwareStats.PrePatcher\MonkeyLoader.HardwareStats.PrePatcher.csproj" PrivateAssets="All" />
+  </ItemGroup>
+</Project>
